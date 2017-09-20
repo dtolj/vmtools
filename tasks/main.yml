@@ -1,0 +1,8 @@
+---
+- name: Install VMtools
+  yum: name=open-vm-tools enablerepo=rhel-6-server-cf-tools-1-rpms
+  when: ansible_distribution_major_version == '6'
+
+- name: Install VMtools
+  yum: name=open-vm-tools
+  when: ansible_distribution_major_version == '7'
